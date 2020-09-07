@@ -30,7 +30,7 @@ initObject.getMongoDB()
 
 
 //api2
-router.get('/api2',async(req,res)=>{
+router.post('/api2',async(req,res)=>{
   try{
     let dict = await dbObject.collection(Collection.USER).find().project({_id:0}).toArray();
     let dict2 = await dbObject.collection(Collection.ORDER).find().project({_id:0,date:0,orderId:0}).toArray();
